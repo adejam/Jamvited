@@ -5,6 +5,7 @@ import { LanguageContext } from './store/contexts/LanguageContextProvider'
 import { Routes, Route } from "react-router-dom"
 import Home from './pages/Home'
 import DocumentTitleProvider from './DocumentTitleProvider'
+import AddEvent from './pages/AddEvent'
 
 const App = () => {
   const langContext = useContext(LanguageContext)
@@ -21,7 +22,7 @@ const App = () => {
         <Layout>
         <Routes>
           <Route element={<Home />} path="/" />
-          <Route element={<Home />} path="/event/:id" />
+          <Route element={<AddEvent />} path="/add-event" />
         </Routes>
         </Layout>
       </DocumentTitleProvider>

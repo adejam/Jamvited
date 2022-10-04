@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { appName } from '../constants/variables'
 import { useLocation } from "react-router-dom"
 import getStringFromLongText from '../utils/getStringFromLongText'
@@ -9,7 +9,7 @@ function useDocumentTitle() {
 
   useEffect(() => {
     document.title = `${appName} - ${currentPage}`
-  }, [])
+  }, [currentPage])
 }
 
 export default useDocumentTitle

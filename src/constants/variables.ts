@@ -1,6 +1,10 @@
+import rem from "../utils/rem"
+
+export const defaultFontSize = 14
+
 export const errorStyle = {
     color: "red",
-    fontSize: "13px"
+    fontSize: rem(13)
 }
 
 export const localeDropdownOptions = [
@@ -8,6 +12,8 @@ export const localeDropdownOptions = [
     { key: 'FR', value: 'fr' },
 ]
 
-export const defaultFontSize = 14
+export const appName = "JamEvent"
 
-export const appName = "JamApp"
+export const SUPPORTED_PHOTO_FORMAT = ["image/jpg", "image/jpeg", "image/png"]
+
+export const MAX_FILE_SIZE = 1024 * 1024

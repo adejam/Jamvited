@@ -12,7 +12,7 @@ const RadioInput: React.FC<ICheckboxInput> = ({
 }) => {
   const restProps = {"aria-label": label ? `${name} field`: undefined, ...rest}
   return (
-    <div className="form-control">
+    <div className="form-group">
       {label && <label className="radioLabelInputDescritpion">{label}</label>}
       <Field aria-describedby={id && `${id}Error`} id={id} name={name} {...restProps}>
         {({ field }: FieldProps) => {
@@ -21,7 +21,7 @@ const RadioInput: React.FC<ICheckboxInput> = ({
               <React.Fragment key={option.key}>
                 <input
                   checked={field?.value === option.value}
-                  className="radio-input"
+                  className="radio-input form-control"
                   id={option.value}
                   type="radio"
                   {...field}

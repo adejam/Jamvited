@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, FieldProps } from "formik"
+import { ErrorMessage } from "formik"
 import React from "react"
 import { IbasicInputProps } from "../../../../../types"
 import Text from "../../../atoms/Text"
@@ -6,26 +6,16 @@ import Text from "../../../atoms/Text"
 const FileInput: React.FC<IbasicInputProps> =  ({ id, label, name, ...rest }) => {
     const restProps = {"aria-label": !label ? `${name} field`: undefined, ...rest}
     return (
-      <div className='form-control'>
+      <div className='form-group'>
         {label && <label htmlFor={id}>{label}</label>}
-        <Field aria-describedby={id && `${id}Error`} id={id} name={name} {...restProps}>
-          {({ form, field }: FieldProps) => {
-            const {setFieldValue} = form
-            // const { value } = field
-            return (
               <input
-                className="date-input"
-                id={name}
+                aria-describedby={id && `${id}Error`}
+                className="date-input form-control"
+                id={id}
+                name={name}
                 type="file"
-                {...field}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    e.target.files instanceof FileList && setFieldValue(name, e.target.files[0])
-                }}
-                {...rest}
+                {...restProps}
               />
-            )
-          }}
-        </Field>
         <ErrorMessage name={name} render={msg => <Text id={id && `${id}-error`} isErrorText>{msg}</Text>} />
         </div>
     )

@@ -12,12 +12,12 @@ interface ITextInput {
 const TextInput: React.FC<ITextInput> = ({ id, label, name, control="text", ...rest }) => {
   const restProps = {"aria-label": label ? `${name} field`: undefined, ...rest}
   return (
-    <div className="form-control">
+    <div className="form-group">
       {label && <label htmlFor={id}>{label}</label>}
       <Field
-        aria-describedBy={id && `${id}Error`}
+        aria-describedby={id && `${id}Error`}
         as={control === "textarea" && control}
-        className="text-input"
+        className="text-input form-control"
         id={id}
         name={name}
         {...restProps}

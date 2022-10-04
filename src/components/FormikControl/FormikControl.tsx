@@ -1,15 +1,10 @@
 import React from 'react'
 import CheckboxInput from '../atomic-ui/molecules/FormikInputs/CheckboxInput'
+import DatePickerInput from '../atomic-ui/molecules/FormikInputs/DatePickerInput'
+import FileInput from '../atomic-ui/molecules/FormikInputs/FileInput'
 import RadioInput from '../atomic-ui/molecules/FormikInputs/RadioInput'
-// import { IKeyValueStringObject } from '../../types'
 import SelectInput from '../atomic-ui/molecules/FormikInputs/SelectInput'
 import TextInput from '../atomic-ui/molecules/FormikInputs/TextInput'
-// import ChakraInput from './ChakraInput'
-// import CheckboxGroup from './CheckboxGroup'
-// import DatePicker from './DatePicker'
-// import RadioButtons from './RadioButtons'
-// import Select from './Select'
-// import Textarea from './Textarea'
 
 interface IFormikControl {
   control: string
@@ -30,8 +25,10 @@ const FormikControl: React.FC<IFormikControl> = ({
       return <RadioInput {...rest} />
     case 'checkbox':
       return <CheckboxInput {...rest} />
-    // case 'date':
-    //   return <DatePicker {...rest} />
+    case 'date':
+      return <DatePickerInput {...rest} />
+    case 'file':
+        return <FileInput {...rest} />
     default:
       return null
   }
