@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from 'formik'
+import React from 'react'
 import { IKeyValueStringObject } from '../../../../../types'
 import Text from '../../../atoms/Text'
 
@@ -19,15 +20,15 @@ const SelectInput: React.FC<ISelectInput> = ({
 }) => {
   const restProps = {"aria-label": label ? `${name} field`: undefined, ...rest}
   return (
-    <div className="form-control">
+    <div className="form-group">
+      <>
       {label && <label htmlFor={id}>{label}</label>}
-      <label htmlFor={'id'}>{label}</label>
       <Field
-        aria-describedBy={id && `${id}Error`}
+        aria-describedby={id && `${id}Error`}
         as="select"
-        className="select-input"
+        className="select-input form-control"
         id={'id'}
-        name={'name'}
+        name={name}
         {...restProps}
       >
         {options?.map((option) =>  (
@@ -38,6 +39,7 @@ const SelectInput: React.FC<ISelectInput> = ({
         )}
       </Field>
       <ErrorMessage name={name} render={msg => <Text id={id && `${id}-error`} isErrorText>{msg}</Text>} />
+      </>
     </div>
   )
 }

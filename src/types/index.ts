@@ -17,3 +17,4 @@ export type {
   IbasicInputProps
 } from './global'
 export type { TVariants } from './variants'
+export type { TCountry } from './country'

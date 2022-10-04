@@ -13,3 +13,7 @@ export const localeDropdownOptions = [
 ]
 
 export const appName = "JamEvent"
+
+export const SUPPORTED_PHOTO_FORMAT = ["image/jpg", "image/jpeg", "image/png"]
+
+export const MAX_FILE_SIZE = 1024 * 1024

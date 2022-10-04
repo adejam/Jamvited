@@ -5,10 +5,10 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { IbasicInputProps } from '../../../../../types'
 import Text from '../../../atoms/Text'
 
-const DatePicker: React.FC<IbasicInputProps> =  ({ id, label, name, ...rest }) => {
+const DatePickerInput: React.FC<IbasicInputProps> =  ({ id, label, name, ...rest }) => {
   const restProps = {"aria-label": !label ? `${name} field`: undefined, ...rest}
   return (
-    <div className='form-control'>
+    <div className='form-group'>
       {label && <label htmlFor={id}>{label}</label>}
       <Field aria-describedby={id && `${id}Error`} id={id} name={name} {...restProps}>
         {({ form, field }: FieldProps) => {
@@ -16,7 +16,7 @@ const DatePicker: React.FC<IbasicInputProps> =  ({ id, label, name, ...rest }) =
           const { value } = field
           return (
             <DateView
-              className="date-input"
+              className="date-input form-control"
               id={name}
               selected={value}
               {...field}
@@ -31,4 +31,4 @@ const DatePicker: React.FC<IbasicInputProps> =  ({ id, label, name, ...rest }) =
   )
 }
 
-export default DatePicker
+export default DatePickerInput

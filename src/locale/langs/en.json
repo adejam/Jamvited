@@ -1,6 +1,9 @@
 {
   "Global.hello": "Hello",
+  "LocaleSwitcher.changeLanguage": "Change Language",
+  "PreviewImage.sizeErrorMessage": "File size should not be greater than 1mb -- in french",
+  "PreviewImage.formatErrorMessage": "File format not supported -- in french",
   "Home.pageHeaderText": "Imagine if Snapchat had event",
   "Home.addEventButtonText": "Create my event",
-  "LocaleSwitcher.changeLanguage": "Change Language"
+  "AddEvent.formTitle": "Create new event"
 }
