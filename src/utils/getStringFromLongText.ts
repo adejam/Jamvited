@@ -17,6 +17,8 @@ const getStringFromLongText = (
     textToFind = textArray[index]
   }
 
+  console.log(textToFind)
+
   textToFind = textToFind || fallbackText
 
   return firstCharToUpperCase(textToFind)
