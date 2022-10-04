@@ -19,7 +19,7 @@
     {
       "files": [
         "**/__tests__/**/*.[jt]s?(x)", // Only uses Testing Library lint rules in __test__ folders
-        "**/?(*.)+(spec|test).[jt]s?(x)" // Only uses Testing Library lint rules in test files...
+        "**/?(*.)+(spec|test).[jt]s?(x)" // Only uses Testing Library lint rules in test files
       ],
       "extends": ["plugin:testing-library/react"]
     }
