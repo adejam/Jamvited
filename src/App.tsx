@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom"
 import Home from './pages/Home'
 import DocumentTitleProvider from './DocumentTitleProvider'
 import AddEvent from './pages/AddEvent'
+import EventPage from './pages/EventPage'
 
 const App = () => {
   const langContext = useContext(LanguageContext)
@@ -23,6 +24,7 @@ const App = () => {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<AddEvent />} path="/add-event" />
+          <Route element={<EventPage />} path="/event/:id" />
         </Routes>
         </Layout>
       </DocumentTitleProvider>

@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { FormattedMessage } from "react-intl"
 import PreviewImage from "../../components/atomic-ui/atoms/PreviewImage"
 import Text from "../../components/atomic-ui/atoms/Text"
@@ -9,25 +9,32 @@ import { StyledForm } from "../../globalStyles/StyledForm.style"
 import { TCountry } from "../../types"
 import { eventDataInitialValues, eventDataValidationSchema } from "./AddEvent.formdata"
 import { v4 as uuidv4 } from 'uuid'
+import { EventContext, IEvent } from "../../store/contexts/EventContextProvided"
+import { useNavigate } from "react-router-dom"
 
 interface IEventDataInitialValues {
-    endDate: string | null,
-    eventCity: string,
-    eventCountry: string,
-    eventName: string,
-    eventState: string,
-    hostName: string,
-    startDate: string | null,
+    endDate: string | null
+    eventCity: string
+    eventCountry: string
+    eventName: string
+    eventState: string
+    hostName: string
+    eventPhoto: Blob | null
+    startDate: string | null
 }
 
 const AddEvent = () => {
     const [statesDropdown, setStatesDropdown] = useState<{key: string, value: string}[] | []>([])
+    const { dispatch } = useContext(EventContext)
 
     const countriesDropdownData = deriveCountriesDropdownKeyAndValue()
+    const navigate = useNavigate()
+
     const submitHandler = (values: IEventDataInitialValues) => {
-        const valuesWithId = {id: uuidv4(), ...values}
-        // eslint-disable-next-line no-console
-        console.log(valuesWithId)
+        const id = uuidv4()
+        const vals: IEvent = {id, ...values} as IEvent
+        dispatch({ event: vals, type: 'ADD_EVENT' })
+        navigate(`/event/${id}`)
     }
     
   return (
@@ -118,7 +125,7 @@ const AddEvent = () => {
               />
 
               <button disabled={!formik.isValid} type="submit">
-                Submit
+                <FormattedMessage id="Global.next" />
               </button>
             </fieldset>
             </Form>
