@@ -1,5 +1,7 @@
 {
   "Global.hello": "Hello",
+  "Global.next": "Next",
+  "EventPage.loadingEvent": "Loading Events",
   "LocaleSwitcher.changeLanguage": "Change Language",
   "PreviewImage.sizeErrorMessage": "File size should not be greater than 1mb -- in french",
   "PreviewImage.formatErrorMessage": "File format not supported -- in french",

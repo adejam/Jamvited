@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import EventContextProvider from './store/contexts/EventContextProvided'
 import LanguageContextProvider from './store/contexts/LanguageContextProvider'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -10,7 +11,9 @@ root.render (
   <React.StrictMode>
     <BrowserRouter >
     <LanguageContextProvider>
-      <App />
+      <EventContextProvider>
+        <App />
+      </EventContextProvider>
     </LanguageContextProvider>
     </BrowserRouter>
   </React.StrictMode>
