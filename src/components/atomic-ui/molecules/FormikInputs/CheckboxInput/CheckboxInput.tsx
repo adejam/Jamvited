@@ -16,7 +16,7 @@ const CheckboxInput: React.FC<ICheckboxInput> = ({
 }) => {
   const restProps = {"aria-label": label ? `${name} field`: undefined, ...rest}
   return (
-    <div className='form-control'>
+    <div className='form-group'>
       {label && <label className="checkboxLabelInputDescritpion" htmlFor={id}>{label}</label>}
       <Field aria-describedby={id && `${id}Error`} id={id} name={name} {...restProps}>
         {({ field }: FieldProps) => {
@@ -25,6 +25,7 @@ const CheckboxInput: React.FC<ICheckboxInput> = ({
               <React.Fragment key={option.key}>
                 <input
                   checked={field?.value.includes(option.value)}
+                  className={'form-control'}
                   id={option.value}
                   type='checkbox'
                   {...field}
