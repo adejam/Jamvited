@@ -32,7 +32,6 @@ const AddEvent = () => {
 
     const submitHandler = (values: IEventDataInitialValues) => {
         const id = uuidv4()
-        console.log(values.eventPhoto)
         const vals: IEvent = {id, ...values} as IEvent
         dispatch({ event: vals, type: 'ADD_EVENT' })
         navigate(`/event/${id}`)

@@ -15,7 +15,6 @@ const EventPage = () => {
 
   useEffect(() => {
     const currentEvent = events?.filter(event => event.id === id)[0]
-  console.log(currentEvent)
     setEvent(currentEvent)
   }, [id])
 
